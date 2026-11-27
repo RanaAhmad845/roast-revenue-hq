@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # The Supabase publishable (anon) key is designed to be shipped to the browser,
+  # and Vite inlines VITE_* variables into the client bundle. Exclude it from
+  # secret scanning so the build isn't blocked by an intentionally public value.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_PUBLISHABLE_KEY"
