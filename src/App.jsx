@@ -62,7 +62,7 @@ const money = (n) => new Intl.NumberFormat("en-US", { style: "currency", currenc
 const shortDate = (v) => v ? new Date(`${v}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "—";
 const uid = () => Date.now() + Math.floor(Math.random() * 1000);
 
-function App() {
+export default function App() {
   // All business records live in one state object and are saved to this browser automatically.
   const [data, setData] = useState(loadData);
   const [page, setPage] = useState("Overview");
